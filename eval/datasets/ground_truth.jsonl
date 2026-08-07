@@ -1,0 +1,96 @@
+{"camera_id": "cam-aisle-01", "kind": "unsafe_interaction", "t_start": 4.5, "t_end": 7.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-aisle-01-000"}
+{"camera_id": "cam-aisle-01", "kind": "blocked_zone", "t_start": 25.0, "t_end": 49.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-aisle-01-000"}
+{"camera_id": "cam-aisle-01", "kind": "workflow_anomaly", "t_start": 63.0, "t_end": 109.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-aisle-01-000"}
+{"camera_id": "cam-aisle-01", "kind": "congestion", "t_start": 167.0, "t_end": 178.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-aisle-01-000"}
+{"camera_id": "cam-dock-02", "kind": "workflow_anomaly", "t_start": 12.0, "t_end": 58.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-dock-02-001"}
+{"camera_id": "cam-dock-02", "kind": "blocked_zone", "t_start": 62.0, "t_end": 86.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-dock-02-001"}
+{"camera_id": "cam-dock-02", "kind": "unsafe_interaction", "t_start": 92.5, "t_end": 95.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-dock-02-001"}
+{"camera_id": "cam-dock-02", "kind": "congestion", "t_start": 101.0, "t_end": 112.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-dock-02-001"}
+{"camera_id": "cam-pack-03", "kind": "blocked_zone", "t_start": 24.0, "t_end": 48.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-pack-03-002"}
+{"camera_id": "cam-pack-03", "kind": "congestion", "t_start": 51.0, "t_end": 62.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-pack-03-002"}
+{"camera_id": "cam-pack-03", "kind": "unsafe_interaction", "t_start": 121.5, "t_end": 124.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-pack-03-002"}
+{"camera_id": "cam-pack-03", "kind": "workflow_anomaly", "t_start": 142.0, "t_end": 188.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-pack-03-002"}
+{"camera_id": "cam-recv-04", "kind": "workflow_anomaly", "t_start": 1.0, "t_end": 47.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-recv-04-003"}
+{"camera_id": "cam-recv-04", "kind": "blocked_zone", "t_start": 51.0, "t_end": 75.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-recv-04-003"}
+{"camera_id": "cam-recv-04", "kind": "unsafe_interaction", "t_start": 151.5, "t_end": 154.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-recv-04-003"}
+{"camera_id": "cam-recv-04", "kind": "congestion", "t_start": 172.0, "t_end": 183.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-recv-04-003"}
+{"camera_id": "cam-aisle-01", "kind": "workflow_anomaly", "t_start": 8.0, "t_end": 54.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-aisle-01-004"}
+{"camera_id": "cam-aisle-01", "kind": "congestion", "t_start": 80.0, "t_end": 91.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-aisle-01-004"}
+{"camera_id": "cam-aisle-01", "kind": "blocked_zone", "t_start": 94.0, "t_end": 118.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-aisle-01-004"}
+{"camera_id": "cam-aisle-01", "kind": "unsafe_interaction", "t_start": 124.5, "t_end": 127.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-aisle-01-004"}
+{"camera_id": "cam-dock-02", "kind": "workflow_anomaly", "t_start": 6.0, "t_end": 52.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-dock-02-005"}
+{"camera_id": "cam-dock-02", "kind": "congestion", "t_start": 56.0, "t_end": 67.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-dock-02-005"}
+{"camera_id": "cam-dock-02", "kind": "unsafe_interaction", "t_start": 73.5, "t_end": 76.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-dock-02-005"}
+{"camera_id": "cam-dock-02", "kind": "blocked_zone", "t_start": 176.0, "t_end": 200.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-dock-02-005"}
+{"camera_id": "cam-pack-03", "kind": "unsafe_interaction", "t_start": 32.5, "t_end": 35.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-pack-03-006"}
+{"camera_id": "cam-pack-03", "kind": "congestion", "t_start": 41.0, "t_end": 52.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-pack-03-006"}
+{"camera_id": "cam-pack-03", "kind": "blocked_zone", "t_start": 98.0, "t_end": 122.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-pack-03-006"}
+{"camera_id": "cam-pack-03", "kind": "workflow_anomaly", "t_start": 132.0, "t_end": 178.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-pack-03-006"}
+{"camera_id": "cam-recv-04", "kind": "congestion", "t_start": 8.0, "t_end": 19.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-recv-04-007"}
+{"camera_id": "cam-recv-04", "kind": "unsafe_interaction", "t_start": 25.5, "t_end": 28.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-recv-04-007"}
+{"camera_id": "cam-recv-04", "kind": "blocked_zone", "t_start": 49.0, "t_end": 73.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-recv-04-007"}
+{"camera_id": "cam-recv-04", "kind": "workflow_anomaly", "t_start": 88.0, "t_end": 134.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-recv-04-007"}
+{"camera_id": "cam-aisle-01", "kind": "unsafe_interaction", "t_start": 43.5, "t_end": 46.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-aisle-01-008"}
+{"camera_id": "cam-aisle-01", "kind": "congestion", "t_start": 52.0, "t_end": 63.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-aisle-01-008"}
+{"camera_id": "cam-aisle-01", "kind": "workflow_anomaly", "t_start": 76.0, "t_end": 122.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-aisle-01-008"}
+{"camera_id": "cam-aisle-01", "kind": "blocked_zone", "t_start": 176.0, "t_end": 200.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-aisle-01-008"}
+{"camera_id": "cam-dock-02", "kind": "unsafe_interaction", "t_start": 47.5, "t_end": 50.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-dock-02-009"}
+{"camera_id": "cam-dock-02", "kind": "workflow_anomaly", "t_start": 88.0, "t_end": 134.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-dock-02-009"}
+{"camera_id": "cam-dock-02", "kind": "blocked_zone", "t_start": 150.0, "t_end": 174.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-dock-02-009"}
+{"camera_id": "cam-dock-02", "kind": "congestion", "t_start": 177.0, "t_end": 188.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-dock-02-009"}
+{"camera_id": "cam-pack-03", "kind": "congestion", "t_start": 13.0, "t_end": 24.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-pack-03-010"}
+{"camera_id": "cam-pack-03", "kind": "blocked_zone", "t_start": 59.0, "t_end": 83.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-pack-03-010"}
+{"camera_id": "cam-pack-03", "kind": "unsafe_interaction", "t_start": 94.5, "t_end": 97.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-pack-03-010"}
+{"camera_id": "cam-pack-03", "kind": "workflow_anomaly", "t_start": 103.0, "t_end": 149.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-pack-03-010"}
+{"camera_id": "cam-recv-04", "kind": "unsafe_interaction", "t_start": 49.5, "t_end": 52.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-recv-04-011"}
+{"camera_id": "cam-recv-04", "kind": "blocked_zone", "t_start": 58.0, "t_end": 82.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-recv-04-011"}
+{"camera_id": "cam-recv-04", "kind": "workflow_anomaly", "t_start": 128.0, "t_end": 174.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-recv-04-011"}
+{"camera_id": "cam-recv-04", "kind": "congestion", "t_start": 178.0, "t_end": 189.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-recv-04-011"}
+{"camera_id": "cam-aisle-01", "kind": "blocked_zone", "t_start": 1.0, "t_end": 25.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-aisle-01-012"}
+{"camera_id": "cam-aisle-01", "kind": "workflow_anomaly", "t_start": 82.0, "t_end": 128.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-aisle-01-012"}
+{"camera_id": "cam-aisle-01", "kind": "congestion", "t_start": 148.0, "t_end": 159.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-aisle-01-012"}
+{"camera_id": "cam-aisle-01", "kind": "unsafe_interaction", "t_start": 194.5, "t_end": 197.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-aisle-01-012"}
+{"camera_id": "cam-dock-02", "kind": "blocked_zone", "t_start": 57.0, "t_end": 81.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-dock-02-013"}
+{"camera_id": "cam-dock-02", "kind": "congestion", "t_start": 84.0, "t_end": 95.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-dock-02-013"}
+{"camera_id": "cam-dock-02", "kind": "workflow_anomaly", "t_start": 98.0, "t_end": 144.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-dock-02-013"}
+{"camera_id": "cam-dock-02", "kind": "unsafe_interaction", "t_start": 151.5, "t_end": 154.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-dock-02-013"}
+{"camera_id": "cam-pack-03", "kind": "workflow_anomaly", "t_start": 1.0, "t_end": 47.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-pack-03-014"}
+{"camera_id": "cam-pack-03", "kind": "unsafe_interaction", "t_start": 54.5, "t_end": 57.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-pack-03-014"}
+{"camera_id": "cam-pack-03", "kind": "blocked_zone", "t_start": 162.0, "t_end": 186.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-pack-03-014"}
+{"camera_id": "cam-pack-03", "kind": "congestion", "t_start": 189.0, "t_end": 200.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-pack-03-014"}
+{"camera_id": "cam-recv-04", "kind": "workflow_anomaly", "t_start": 1.0, "t_end": 47.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-recv-04-015"}
+{"camera_id": "cam-recv-04", "kind": "congestion", "t_start": 51.0, "t_end": 62.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-recv-04-015"}
+{"camera_id": "cam-recv-04", "kind": "blocked_zone", "t_start": 109.0, "t_end": 133.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-recv-04-015"}
+{"camera_id": "cam-recv-04", "kind": "unsafe_interaction", "t_start": 139.5, "t_end": 142.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-recv-04-015"}
+{"camera_id": "cam-aisle-01", "kind": "blocked_zone", "t_start": 1.0, "t_end": 25.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-aisle-01-016"}
+{"camera_id": "cam-aisle-01", "kind": "congestion", "t_start": 50.0, "t_end": 61.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-aisle-01-016"}
+{"camera_id": "cam-aisle-01", "kind": "unsafe_interaction", "t_start": 67.5, "t_end": 70.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-aisle-01-016"}
+{"camera_id": "cam-aisle-01", "kind": "workflow_anomaly", "t_start": 153.0, "t_end": 199.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-aisle-01-016"}
+{"camera_id": "cam-dock-02", "kind": "unsafe_interaction", "t_start": 4.5, "t_end": 7.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-dock-02-017"}
+{"camera_id": "cam-dock-02", "kind": "congestion", "t_start": 89.0, "t_end": 100.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-dock-02-017"}
+{"camera_id": "cam-dock-02", "kind": "workflow_anomaly", "t_start": 119.0, "t_end": 165.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-dock-02-017"}
+{"camera_id": "cam-dock-02", "kind": "blocked_zone", "t_start": 169.0, "t_end": 193.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-dock-02-017"}
+{"camera_id": "cam-pack-03", "kind": "blocked_zone", "t_start": 8.0, "t_end": 32.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-pack-03-018"}
+{"camera_id": "cam-pack-03", "kind": "unsafe_interaction", "t_start": 97.5, "t_end": 100.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-pack-03-018"}
+{"camera_id": "cam-pack-03", "kind": "workflow_anomaly", "t_start": 118.0, "t_end": 164.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-pack-03-018"}
+{"camera_id": "cam-pack-03", "kind": "congestion", "t_start": 168.0, "t_end": 179.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-pack-03-018"}
+{"camera_id": "cam-recv-04", "kind": "congestion", "t_start": 12.0, "t_end": 23.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-recv-04-019"}
+{"camera_id": "cam-recv-04", "kind": "blocked_zone", "t_start": 37.0, "t_end": 61.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-recv-04-019"}
+{"camera_id": "cam-recv-04", "kind": "unsafe_interaction", "t_start": 144.5, "t_end": 147.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-recv-04-019"}
+{"camera_id": "cam-recv-04", "kind": "workflow_anomaly", "t_start": 153.0, "t_end": 199.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-recv-04-019"}
+{"camera_id": "cam-aisle-01", "kind": "workflow_anomaly", "t_start": 13.0, "t_end": 59.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-aisle-01-020"}
+{"camera_id": "cam-aisle-01", "kind": "unsafe_interaction", "t_start": 66.5, "t_end": 69.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-aisle-01-020"}
+{"camera_id": "cam-aisle-01", "kind": "blocked_zone", "t_start": 128.0, "t_end": 152.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-aisle-01-020"}
+{"camera_id": "cam-aisle-01", "kind": "congestion", "t_start": 162.0, "t_end": 173.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-aisle-01-020"}
+{"camera_id": "cam-dock-02", "kind": "workflow_anomaly", "t_start": 8.0, "t_end": 54.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-dock-02-021"}
+{"camera_id": "cam-dock-02", "kind": "congestion", "t_start": 85.0, "t_end": 96.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-dock-02-021"}
+{"camera_id": "cam-dock-02", "kind": "blocked_zone", "t_start": 164.0, "t_end": 188.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-dock-02-021"}
+{"camera_id": "cam-dock-02", "kind": "unsafe_interaction", "t_start": 194.5, "t_end": 197.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-dock-02-021"}
+{"camera_id": "cam-pack-03", "kind": "congestion", "t_start": 35.0, "t_end": 46.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-pack-03-022"}
+{"camera_id": "cam-pack-03", "kind": "unsafe_interaction", "t_start": 57.5, "t_end": 60.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-pack-03-022"}
+{"camera_id": "cam-pack-03", "kind": "blocked_zone", "t_start": 83.0, "t_end": 107.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-pack-03-022"}
+{"camera_id": "cam-pack-03", "kind": "workflow_anomaly", "t_start": 110.0, "t_end": 156.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-pack-03-022"}
+{"camera_id": "cam-recv-04", "kind": "blocked_zone", "t_start": 19.0, "t_end": 43.0, "note": "pallet staged inside keep-clear polygon", "scenario_id": "cam-recv-04-023"}
+{"camera_id": "cam-recv-04", "kind": "unsafe_interaction", "t_start": 71.5, "t_end": 74.0, "note": "pedestrian crosses moving forklift path", "scenario_id": "cam-recv-04-023"}
+{"camera_id": "cam-recv-04", "kind": "congestion", "t_start": 80.0, "t_end": 91.0, "note": "six actors stalled in one aisle segment", "scenario_id": "cam-recv-04-023"}
+{"camera_id": "cam-recv-04", "kind": "workflow_anomaly", "t_start": 142.0, "t_end": 188.0, "note": "unit dwells ~8x the station median", "scenario_id": "cam-recv-04-023"}
