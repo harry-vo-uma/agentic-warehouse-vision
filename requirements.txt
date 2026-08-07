@@ -1,0 +1,9 @@
+pydantic>=2.5
+pyyaml>=6.0
+httpx>=0.26
+fastapi>=0.109
+uvicorn>=0.27
+# optional, auto-detected at runtime:
+# langgraph>=0.2      -- real graph orchestration (a built-in runner is used otherwise)
+# av>=11.0            -- real keyframe decoding from source media
+# pillow>=10.0        -- JPEG encoding of keyframes
