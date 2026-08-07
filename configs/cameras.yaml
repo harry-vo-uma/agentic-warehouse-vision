@@ -1,0 +1,19 @@
+# Physical stream bindings. Used by the DeepStream backend; the synthetic
+# backend ignores `uri` and replays scenarios instead.
+cameras:
+  - camera_id: cam-aisle-01
+    uri: rtsp://192.168.10.21/stream1
+    site: dc-west
+    area: "Aisle 1"
+  - camera_id: cam-dock-02
+    uri: rtsp://192.168.10.22/stream1
+    site: dc-west
+    area: "Dock 2"
+  - camera_id: cam-pack-03
+    uri: rtsp://192.168.10.23/stream1
+    site: dc-west
+    area: "Pack line"
+  - camera_id: cam-recv-04
+    uri: rtsp://192.168.10.24/stream1
+    site: dc-west
+    area: "Receiving"

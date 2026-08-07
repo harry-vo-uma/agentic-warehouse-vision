@@ -1,0 +1,40 @@
+# Keep-clear and functional zones, in normalised image coordinates (0-1).
+# Polygons are authored once per camera at install time; nvdsanalytics ROI
+# definitions in configs/deepstream/nvdsanalytics.txt mirror these in pixels.
+cameras:
+  cam-aisle-01:
+    - zone_id: aisle01-keepclear
+      name: "Aisle 1 fire egress"
+      kind: keep_clear
+      polygon: [[0.20, 0.20], [0.42, 0.20], [0.42, 0.42], [0.20, 0.42]]
+    - zone_id: aisle01-lane
+      name: "Aisle 1 travel lane"
+      kind: aisle
+      polygon: [[0.05, 0.44], [0.95, 0.44], [0.95, 0.66], [0.05, 0.66]]
+  cam-dock-02:
+    - zone_id: dock02-keepclear
+      name: "Dock 2 door approach"
+      kind: keep_clear
+      polygon: [[0.60, 0.20], [0.82, 0.20], [0.82, 0.42], [0.60, 0.42]]
+    - zone_id: dock02-staging
+      name: "Dock 2 staging"
+      kind: dock
+      polygon: [[0.05, 0.55], [0.55, 0.55], [0.55, 0.95], [0.05, 0.95]]
+  cam-pack-03:
+    - zone_id: pack03-keepclear
+      name: "Pack line walkway"
+      kind: keep_clear
+      polygon: [[0.20, 0.60], [0.42, 0.60], [0.42, 0.82], [0.20, 0.82]]
+    - zone_id: pack03-station
+      name: "Pack stations 1-4"
+      kind: storage
+      polygon: [[0.50, 0.55], [0.95, 0.55], [0.95, 0.90], [0.50, 0.90]]
+  cam-recv-04:
+    - zone_id: recv04-keepclear
+      name: "Receiving egress"
+      kind: keep_clear
+      polygon: [[0.60, 0.60], [0.82, 0.60], [0.82, 0.82], [0.60, 0.82]]
+    - zone_id: recv04-pedestrian
+      name: "Receiving pedestrian path"
+      kind: pedestrian
+      polygon: [[0.05, 0.05], [0.45, 0.05], [0.45, 0.30], [0.05, 0.30]]

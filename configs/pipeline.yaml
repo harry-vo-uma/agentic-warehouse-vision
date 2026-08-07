@@ -1,0 +1,20 @@
+# Defaults resolved at import time; every value is overridable by env var.
+perception:
+  backend: auto            # auto | deepstream | synthetic
+  tracker: nvdcf
+  min_detection_confidence: 0.35
+  frame_stride: 3
+
+escalation:
+  # Tuned by the sweep in eval/ablations.py. Lowering suppress_below recovers
+  # recall at a steep precision cost; raising escalate_above mostly just moves
+  # events from ESCALATED to LOGGED.
+  suppress_below: 0.36
+  escalate_above: 0.68
+  page_above: 0.86
+  min_temporal_persistence_s: 2.5
+  require_vlm_agreement: true
+  veto_penalty: 0.55
+  contradiction_penalty: 0.18
+  persistence_bonus: 0.12
+  multi_track_bonus: 0.06
