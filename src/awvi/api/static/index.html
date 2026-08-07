@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Warehouse Vision Intelligence — Operator Console</title>
+<style>
+  :root {
+    --bg: #0b0e13; --panel: #141922; --panel-2: #1b2230; --line: #26303f;
+    --text: #e6edf5; --muted: #8b98a9; --accent: #76b900; --accent-dim: #4f7d00;
+    --crit: #ff5c5c; --high: #ff9f43; --med: #ffd93d; --low: #6ec6ff; --info: #7d8899;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  header { padding:18px 24px; border-bottom:1px solid var(--line); display:flex;
+           align-items:baseline; gap:16px; flex-wrap:wrap; }
+  h1 { font-size:17px; margin:0; letter-spacing:.2px; }
+  h1 span { color:var(--accent); }
+  .meta { color:var(--muted); font-size:12px; }
+  main { display:grid; grid-template-columns:minmax(340px,1fr) minmax(380px,1.1fr); gap:20px; padding:20px 24px; }
+  @media (max-width: 900px){ main { grid-template-columns:1fr; } }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+  .panel h2 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+              margin:0; padding:12px 16px; border-bottom:1px solid var(--line); background:var(--panel-2); }
+  .body { padding:14px 16px; }
+  .askbar { display:flex; gap:8px; }
+  input[type=text] { flex:1; background:#0e131b; border:1px solid var(--line); color:var(--text);
+                     border-radius:7px; padding:10px 12px; font-size:14px; }
+  input[type=text]:focus { outline:none; border-color:var(--accent-dim); }
+  button { background:var(--accent); color:#0b0e13; border:0; border-radius:7px; padding:10px 16px;
+           font-weight:600; cursor:pointer; font-size:13px; }
+  button:disabled { opacity:.5; cursor:default; }
+  .chips { display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+  .chip { background:var(--panel-2); border:1px solid var(--line); color:var(--muted);
+          padding:5px 10px; border-radius:999px; font-size:12px; cursor:pointer; }
+  .chip:hover { border-color:var(--accent-dim); color:var(--text); }
+  .answer { margin-top:14px; padding:12px 14px; background:#0e131b; border-left:3px solid var(--accent);
+            border-radius:0 7px 7px 0; white-space:pre-wrap; }
+  ul.events { list-style:none; margin:0; padding:0; max-height:62vh; overflow:auto; }
+  ul.events li { padding:12px 16px; border-bottom:1px solid var(--line); cursor:pointer; }
+  ul.events li:hover { background:var(--panel-2); }
+  ul.events li.sel { background:var(--panel-2); border-left:3px solid var(--accent); padding-left:13px; }
+  .row { display:flex; justify-content:space-between; gap:10px; align-items:center; }
+  .sev { font-size:10px; text-transform:uppercase; letter-spacing:.08em; padding:2px 7px;
+         border-radius:4px; font-weight:700; color:#0b0e13; }
+  .sev.critical{background:var(--crit)} .sev.high{background:var(--high)}
+  .sev.medium{background:var(--med)} .sev.low{background:var(--low)} .sev.info{background:var(--info)}
+  .sub { color:var(--muted); font-size:12px; margin-top:4px; }
+  .kind { font-weight:600; }
+  .conf { font-variant-numeric:tabular-nums; color:var(--muted); font-size:12px; }
+  .frames { display:flex; gap:6px; margin:10px 0; }
+  .frames div { width:56px; height:42px; border-radius:5px; border:1px solid var(--line);
+                background:#0e131b; display:flex; align-items:center; justify-content:center;
+                font-size:9px; color:var(--muted); }
+  .rec { background:#0e131b; border:1px solid var(--line); border-radius:7px; padding:10px 12px; margin-top:8px; }
+  .rec .act { font-weight:600; }
+  .rec .why { color:var(--muted); font-size:12px; margin-top:3px; }
+  .rec .who { font-size:11px; color:var(--accent); margin-top:5px; text-transform:uppercase; letter-spacing:.06em; }
+  .stat { display:flex; gap:18px; flex-wrap:wrap; }
+  .stat div b { display:block; font-size:20px; font-variant-numeric:tabular-nums; }
+  .stat div span { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
+  .trace { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; color:var(--muted);
+           background:#0e131b; border-radius:6px; padding:10px; margin-top:10px; white-space:pre-wrap; max-height:180px; overflow:auto; }
+  .empty { color:var(--muted); padding:20px 16px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Warehouse <span>Vision Intelligence</span></h1>
+  <div class="meta" id="health">connecting…</div>
+</header>
+
+<main>
+  <section>
+    <div class="panel">
+      <h2>Ask about the floor</h2>
+      <div class="body">
+        <div class="askbar">
+          <input type="text" id="q" placeholder="e.g. any near misses with forklifts on the dock?" />
+          <button id="ask">Ask</button>
+        </div>
+        <div class="chips" id="chips"></div>
+        <div class="answer" id="answer" style="display:none"></div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:20px">
+      <h2>Events</h2>
+      <ul class="events" id="events"><li class="empty">loading…</li></ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="panel">
+      <h2>Detail</h2>
+      <div class="body" id="detail"><div class="empty">Select an event.</div></div>
+    </div>
+    <div class="panel" style="margin-top:20px">
+      <h2>Run summary</h2>
+      <div class="body" id="summary"><div class="empty">loading…</div></div>
+    </div>
+  </section>
+</main>
+
+<script>
+const SUGGESTIONS = [
+  "any near misses with forklifts?",
+  "what blocked a keep-clear zone?",
+  "show me congestion events",
+  "critical events on the dock",
+  "anything stuck at the pack line?"
+];
+let EVENTS = [], SELECTED = null;
+
+const el = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+async function j(url, opts) { const r = await fetch(url, opts); if (!r.ok) throw new Error(r.status); return r.json(); }
+
+function renderEvents(list) {
+  const ul = el("events");
+  if (!list.length) { ul.innerHTML = '<li class="empty">No events.</li>'; return; }
+  ul.innerHTML = list.map(e => `
+    <li data-id="${e.event_id}" class="${SELECTED===e.event_id?'sel':''}">
+      <div class="row">
+        <span class="kind">${esc(e.kind.replace(/_/g,' '))}</span>
+        <span class="sev ${e.severity}">${e.severity}</span>
+      </div>
+      <div class="sub">${esc(e.summary)}</div>
+      <div class="row sub">
+        <span>${esc(e.camera_id)} · ${e.t_start.toFixed(1)}s–${e.t_end.toFixed(1)}s · ${esc(e.disposition)}</span>
+        <span class="conf">${(e.confidence*100).toFixed(0)}%</span>
+      </div>
+    </li>`).join("");
+  [...ul.querySelectorAll("li[data-id]")].forEach(li =>
+    li.onclick = () => showDetail(li.dataset.id));
+}
+
+function showDetail(id) {
+  SELECTED = id;
+  const e = EVENTS.find(x => x.event_id === id);
+  renderEvents(EVENTS);
+  if (!e) return;
+  const f = e.findings || {};
+  el("detail").innerHTML = `
+    <div class="row">
+      <span class="kind" style="font-size:15px">${esc(e.kind.replace(/_/g,' '))}</span>
+      <span class="sev ${e.severity}">${e.severity}</span>
+    </div>
+    <div class="sub">${esc(e.camera_id)} · ${e.t_start.toFixed(1)}s–${e.t_end.toFixed(1)}s
+      · zone ${esc(e.zone_id || 'n/a')} · confidence ${(e.confidence*100).toFixed(0)}%</div>
+    <div class="frames">${(e.keyframe_uris||[]).map((u,i)=>`<div title="${esc(u)}">kf ${i+1}</div>`).join("")}</div>
+    <p>${esc(e.narrative)}</p>
+    ${f.description ? `<p class="sub"><b>Vision analysis:</b> ${esc(f.description)}</p>` : ""}
+    ${(f.contributing_factors||[]).length ? `<p class="sub"><b>Contributing:</b> ${f.contributing_factors.map(esc).join("; ")}</p>` : ""}
+    ${(f.contradicting_evidence||[]).length ? `<p class="sub"><b>Considered against:</b> ${f.contradicting_evidence.map(esc).join("; ")}</p>` : ""}
+    <div style="margin-top:12px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">Recommended actions</div>
+    ${(e.recommendations||[]).map(r=>`
+      <div class="rec">
+        <div class="act">${esc(r.action)}</div>
+        <div class="why">${esc(r.rationale)}</div>
+        <div class="who">${esc(r.owner_role)} · ${esc(r.urgency)} · ~${r.est_minutes} min</div>
+      </div>`).join("") || '<div class="sub">None — logged for trend review.</div>'}
+    <div class="trace">${esc((e.trace||[]).map(t=>`${t.node}: ${JSON.stringify(Object.fromEntries(Object.entries(t).filter(([k])=>k!=='node'&&k!=='ts')))}`).join("\n"))}</div>`;
+}
+
+async function ask() {
+  const q = el("q").value.trim();
+  if (!q) return;
+  el("ask").disabled = true;
+  el("answer").style.display = "block";
+  el("answer").textContent = "thinking…";
+  try {
+    const r = await j("/api/ask", {method:"POST", headers:{"Content-Type":"application/json"},
+                                  body: JSON.stringify({question:q, top_k:5})});
+    el("answer").textContent = r.answer + `\n\n(${r.hits.length} matching events, ${r.latency_ms.toFixed(0)} ms)`;
+    EVENTS = r.hits.map(h => h.event);
+    renderEvents(EVENTS);
+    if (EVENTS.length) showDetail(EVENTS[0].event_id);
+  } catch (err) {
+    el("answer").textContent = "query failed: " + err.message;
+  } finally { el("ask").disabled = false; }
+}
+
+async function boot() {
+  el("chips").innerHTML = SUGGESTIONS.map(s=>`<span class="chip">${esc(s)}</span>`).join("");
+  [...document.querySelectorAll(".chip")].forEach(c =>
+    c.onclick = () => { el("q").value = c.textContent; ask(); });
+  el("ask").onclick = ask;
+  el("q").addEventListener("keydown", e => { if (e.key === "Enter") ask(); });
+
+  try {
+    const h = await j("/api/health");
+    el("health").textContent = `${h.events_indexed} events · NIM ${h.nim.mode} · ${h.vlm_model}`;
+    const s = await j("/api/summary");
+    el("summary").innerHTML = `<div class="stat">
+      <div><b>${s.total}</b><span>events</span></div>
+      <div><b>${(s.mean_confidence*100).toFixed(0)}%</b><span>mean conf</span></div>
+      ${Object.entries(s.by_disposition).map(([k,v])=>`<div><b>${v}</b><span>${esc(k)}</span></div>`).join("")}
+    </div>`;
+    const ev = await j("/api/events?limit=200");
+    EVENTS = ev.events;
+    renderEvents(EVENTS);
+  } catch (err) {
+    el("health").textContent = "API unavailable: " + err.message;
+    el("events").innerHTML = '<li class="empty">API unavailable.</li>';
+  }
+}
+boot();
+</script>
+</body>
+</html>
